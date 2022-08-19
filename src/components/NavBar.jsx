@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CartWidget } from "./CartWidget";
 
 export const NavBar = () => {
   return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+
         <div className="container-fluid">
           <Link className="navbar-brand" to="#">
             My App 
@@ -49,6 +51,7 @@ export const NavBar = () => {
             </ul>
           </div>
         </div>
+      <CartWidget/>
       </nav>
   );
 };

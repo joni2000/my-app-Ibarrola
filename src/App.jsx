@@ -1,12 +1,11 @@
 
 import './App.css';
-import { NavBar } from './components/NavBar';
+import { Home } from './pages/';
+
 
 export const App = ()=> {
   return (
-    <div className="App">
-      <NavBar />
-    </div>
+    <Home />
   );
 }
 
