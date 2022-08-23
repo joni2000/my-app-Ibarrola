@@ -5,10 +5,7 @@ export const Home = () => {
     <>
         <NavBar />
 
-        <h1>MyApp</h1>  
-        <hr/>
-
-        <ItemListConteiner />
+        <ItemListConteiner greeting='Hola mundo de react'/>
     </>
   )
 }

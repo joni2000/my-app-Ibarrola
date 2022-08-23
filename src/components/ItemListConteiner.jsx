@@ -1,6 +1,11 @@
 
-export const ItemListConteiner = () => {
+export const ItemListConteiner = ({ greeting }) => {
   return (
-    <div>ItemListConteiner</div>
+    <>
+      <h1>ItemListConteiner</h1>
+      <hr />
+
+      <h3>{ greeting }</h3>
+    </>
   )
 }
