@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import { ItemCount } from "./ItemCount";
 
 export const ItemListConteiner = ({ greeting }) => {
@@ -10,13 +11,18 @@ export const ItemListConteiner = ({ greeting }) => {
   };
 
   return (
-    <>
+    <Grid 
+      container
+      direction='column'
+      justifyContent='center'
+      alignItems='center'
+    >
       <h1>ItemListConteiner</h1>
       <hr />
 
       <h3>{greeting}</h3>
 
       <ItemCount product={ product }/>
-    </>
+    </Grid>
   );
 };

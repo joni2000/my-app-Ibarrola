@@ -1,8 +1,9 @@
-
+import { IconButton } from "@mui/material";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 export const CartWidget = () => {
   return (
-    <div className="me-2">
-        <i class="fa-solid fa-cart-shopping"></i>
-    </div>
-  )
-}
+    <IconButton color="inherit" size="small">
+      <ShoppingCartIcon />
+    </IconButton>
+  );
+};

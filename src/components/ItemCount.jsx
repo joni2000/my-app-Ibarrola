@@ -1,3 +1,6 @@
+import { Grid, IconButton, Typography } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from "react";
 export const ItemCount = ({ product }) => {
 
@@ -14,22 +17,30 @@ export const ItemCount = ({ product }) => {
     }
 
   return (
-    <div className="container d-flex gap-3">
-      <button 
-        className="btn btn-primary"
-        onClick={ ()=> counter < product.stock && onAdd('resta') }
+    <Grid 
+      container
+      direction='row'
+      alignItems='center'
+      sx={{ gap: 2, border: 1, width: 'fit-content', borderRadius: 1}}
     >
-        -
-    </button>
+      <IconButton
+          color='primary'
+          sx={{ borderRight: 1}}
+          onClick={ ()=> counter < product.stock && onAdd('resta') }
+      >
+        <RemoveIcon />
+      </IconButton>
 
-      <p className="align-self-end">{counter}</p>
+      <Typography sx={{ alignItems: 'center' }}>{counter}</Typography>
 
-      <button 
-        className="btn btn-primary"
+      <IconButton
+        color='primary'
+        size='medium'
+        sx={{ borderLeft: 1}}
         onClick={ ()=> counter < product.stock && onAdd('suma') }
       >
-        +
-      </button>
-    </div>
+        <AddIcon variant='contained'/>
+      </IconButton>
+    </Grid>
   );
 };
