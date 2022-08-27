@@ -26,12 +26,12 @@ export const ItemCount = ({ product }) => {
       <IconButton
           color='primary'
           sx={{ borderRight: 1}}
-          onClick={ ()=> counter < product.stock && onAdd('resta') }
+          onClick={ ()=> counter > 0 && onAdd('resta') }
       >
         <RemoveIcon />
       </IconButton>
 
-      <Typography sx={{ alignItems: 'center' }}>{counter}</Typography>
+      <Typography>{counter}</Typography>
 
       <IconButton
         color='primary'
