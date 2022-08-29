@@ -1,7 +1,7 @@
 import { MenuOutlined } from "@mui/icons-material";
 import { AppBar, IconButton, Toolbar, Grid, Typography } from "@mui/material";
-import { CartWidget } from "./CartWidget";
-import { SearchBar } from "./SearchBar";
+import { CartWidget } from "../cartWidget/CartWidget";
+import { SearchBar } from "../searchBar/SearchBar";
 
 export const NavBar = () => {
   return (

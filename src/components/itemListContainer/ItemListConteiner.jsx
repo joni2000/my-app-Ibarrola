@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { ItemCount } from "./ItemCount";
+import { ItemCount } from "../itemCount/ItemCount";
 
 export const ItemListConteiner = ({ greeting }) => {
 

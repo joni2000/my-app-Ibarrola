@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "title": "producto1",
+            "description": "descripcion del producto 1",
+            "price": "100",
+            "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_917086-MLA48196821690_112021-O.webp"
+        },
+        {
+            "id": "2",
+            "title": "producto2",
+            "description": "descripcion del producto 2",
+            "price": "100",
+            "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_917086-MLA48196821690_112021-O.webp"
+        },
+        {
+            "id": "3",
+            "title": "producto3",
+            "description": "descripcion del producto 3",
+            "price": "100",
+            "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_917086-MLA48196821690_112021-O.webp"
+        },
+        {
+            "id": "2",
+            "title": "producto2",
+            "description": "descripcion del producto 2",
+            "price": "100",
+            "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_917086-MLA48196821690_112021-O.webp"
+        },
+        {
+            "id": "4",
+            "title": "producto4",
+            "description": "descripcion del producto 4",
+            "price": "100",
+            "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_917086-MLA48196821690_112021-O.webp"
+        },
+        {
+            "id": "5",
+            "title": "producto5",
+            "description": "descripcion del producto 5",
+            "price": "100",
+            "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_917086-MLA48196821690_112021-O.webp"
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material"
-import { ItemListConteiner, NavBar } from "../components"
+import { ItemListConteiner } from "../../components/itemListContainer/ItemListConteiner"
+import { NavBar } from "../../components/navBar/NavBar"
 
 export const Home = () => {
   return (
