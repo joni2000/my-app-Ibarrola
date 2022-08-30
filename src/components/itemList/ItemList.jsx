@@ -13,7 +13,12 @@ export const ItemList = () => {
     }, []);
 
     return (
-        <Grid container>
+        <Grid 
+            container 
+            spacing={2}       
+            justifyContent='center'
+            alignItems='center'
+        >
             {
                 products.length > 0 && (
                 products.map(product => (
