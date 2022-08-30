@@ -1,5 +1,4 @@
 import { TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 
 export const SearchBar = ({ critBusqueda }) => {
   return (
@@ -8,8 +7,6 @@ export const SearchBar = ({ critBusqueda }) => {
       placeholder={`Buscar ${critBusqueda}`}
       size="small"
       sx={{ backgroundColor: "white", borderRadius: 1, width: 340 }}
-      startIcon={<SearchIcon />}
-      
     >
       
     </TextField>

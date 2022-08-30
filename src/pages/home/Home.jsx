@@ -5,6 +5,7 @@ import { NavBar } from "../../components/navBar/NavBar"
 export const Home = () => {
   return (
     <Grid 
+      container
       direction='column'
       justifyContent='center'
       alignItems='center'
