@@ -13,6 +13,9 @@ export const theme = ()=> createTheme({
         black: {
             main: grey.A700
         },
+        white: {
+            main: grey[100]
+        },
         price: {
             main: green[400]
         },

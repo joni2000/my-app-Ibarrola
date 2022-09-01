@@ -1,17 +1,23 @@
 import { Card, CardContent, CardHeader, CardMedia, IconButton, Typography } from "@mui/material"
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useNavigate } from "react-router-dom";
 
 export const Item = ({ product }) => {
 
-  const { title, description, price, pictureUrl} = product;
+  let navigate = useNavigate();
+
+  const { id, title, description, price, pictureUrl } = product;
 
   return (
-    <Card sx={{ maxWidth: 250 }}>
+    <Card 
+      sx={{ maxWidth: 250, cursor: 'pointer' }}
+      onClick={ ()=> navigate(`/productDetail/${id}`)}
+    >
         <CardHeader
           title={ title }
           action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
+            <IconButton aria-label="settings" sx={{ zIndex: 22 }}>
+              <FavoriteBorderIcon />
             </IconButton>
           }
         />

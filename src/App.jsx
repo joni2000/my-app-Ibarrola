@@ -1,11 +1,15 @@
 import { AppTheme } from './theme/AppTheme';
-import { Home } from './pages/home/Home'
+import { AppRouter } from './routes/AppRouter';
+
+import './app.css';
  
 export const App = ()=> {
   return (
-    <AppTheme>
-      <Home />
-    </AppTheme>
+      <AppTheme>
+        
+        <AppRouter />
+
+      </AppTheme>
   );
 }
 
