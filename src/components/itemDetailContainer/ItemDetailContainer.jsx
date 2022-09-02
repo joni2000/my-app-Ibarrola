@@ -22,7 +22,9 @@ export const ItemDetailContainer = () => {
   return (
     <Grid 
       container 
-      sx={{ m: 3, p: 2, borderRadius: 1}}
+      direction="row"
+      justifyContent="center"
+      sx={{ m: 3, p: 2, borderRadius: 1, flexWrap: 'noWrap'}}
       className="shadow"
     >
       { product && <ItemDetail product={ product }/> } 
