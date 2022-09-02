@@ -7,7 +7,7 @@ export const SearchBar = ({ critBusqueda }) => {
       placeholder={`Buscar ${critBusqueda}`}
       size="small"
       color="primary"
-      sx={{ backgroundColor: "white", borderRadius: 1, width: 340 }}
+      sx={{ backgroundColor: "white", width: 340 }}
     >
       
     </TextField>

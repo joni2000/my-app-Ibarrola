@@ -4,6 +4,8 @@ import { CartWidget } from "../cartWidget/CartWidget";
 import { SearchBar } from "../searchBar/SearchBar";
 import { Link } from "react-router-dom"
 
+import './navBar.css';
+
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 export const NavBar = () => {
 
