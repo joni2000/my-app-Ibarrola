@@ -15,10 +15,16 @@ export const ItemDetailContainer = () => {
           .then( products =>  setProducts( products.data ))
   }, []);
 
-  const product = products.find( product => product.id === params.id ) 
+  console.log(products)
+
+  const product = products.find( product => product.id === +params.id )   
 
   return (
-    <Grid container>
+    <Grid 
+      container 
+      sx={{ m: 3, p: 2, borderRadius: 1}}
+      className="shadow"
+    >
       { product && <ItemDetail product={ product }/> } 
     </Grid>
   )
