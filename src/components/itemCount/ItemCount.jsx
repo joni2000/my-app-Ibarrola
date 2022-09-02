@@ -2,7 +2,7 @@ import { Grid, IconButton, Typography } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from "react";
-export const ItemCount = ({ product }) => {
+export const ItemCount = ({ stock }) => {
 
     const [counter, setCounter] = useState(0);
 
@@ -37,7 +37,7 @@ export const ItemCount = ({ product }) => {
         color='primary'
         size='medium'
         sx={{ borderLeft: 1}}
-        onClick={ ()=> counter < product.stock && onAdd('suma') }
+        onClick={ ()=> counter < stock && onAdd('suma') }
       >
         <AddIcon variant='contained'/>
       </IconButton>
