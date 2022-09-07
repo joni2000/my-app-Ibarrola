@@ -31,6 +31,8 @@ export const NavBar = () => {
                 <Typography size='small' fontWeight='bold' sx={{ fontSize: { sm: 25 }, color: '#ffffff'}} >SneakerCity</Typography>
               </Link>
 
+              
+
               <SearchBar critBusqueda='productos y marcas'/>
 
               <CartWidget />

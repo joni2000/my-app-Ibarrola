@@ -15,8 +15,6 @@ export const ItemDetailContainer = () => {
           .then( products =>  setProducts( products.data ))
   }, []);
 
-  console.log(products)
-
   const product = products.find( product => product.id === +params.id )   
 
   return (
