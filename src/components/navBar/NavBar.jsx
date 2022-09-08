@@ -3,6 +3,7 @@ import { AppBar, IconButton, Toolbar, Grid, Typography, styled} from "@mui/mater
 import { CartWidget } from "../cartWidget/CartWidget";
 import { SearchBar } from "../searchBar/SearchBar";
 import { Link } from "react-router-dom"
+import { CategoriesMenu } from "../categoriesMenu/CategoriesMenu";
 
 import './navBar.css';
 
@@ -31,7 +32,7 @@ export const NavBar = () => {
                 <Typography size='small' fontWeight='bold' sx={{ fontSize: { sm: 25 }, color: '#ffffff'}} >SneakerCity</Typography>
               </Link>
 
-              
+              <CategoriesMenu />
 
               <SearchBar critBusqueda='productos y marcas'/>
 
