@@ -1,12 +1,13 @@
-import { Grid, IconButton, Typography } from "@mui/material";
+import { Button, Grid, IconButton, Typography } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from "react";
-export const ItemCount = ({ stock }) => {
+import { Link } from "react-router-dom";
+export const ItemCount = ({ stock, min , onAdd }) => {
 
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(min);
 
-    const onAdd = (operacion)=> {
+    const handlerCounter = (operacion)=> {
         if(operacion === 'suma') {
             setCounter( counter + 1 )
         }
@@ -17,7 +18,8 @@ export const ItemCount = ({ stock }) => {
     }
 
   return (
-    <Grid 
+    <>
+      <Grid 
       container
       direction='row'
       alignItems='center'
@@ -26,7 +28,8 @@ export const ItemCount = ({ stock }) => {
       <IconButton
           color='primary'
           sx={{ borderRight: 1}}
-          onClick={ ()=> counter > 0 && onAdd('resta') }
+          onClick={ ()=> counter > min && handlerCounter('resta') }
+          disabled={ counter === min && true }
       >
         <RemoveIcon />
       </IconButton>
@@ -37,10 +40,26 @@ export const ItemCount = ({ stock }) => {
         color='primary'
         size='medium'
         sx={{ borderLeft: 1}}
-        onClick={ ()=> counter < stock && onAdd('suma') }
+        onClick={ ()=> counter < stock && handlerCounter('suma') }
+        disabled={ counter === stock && true }
       >
         <AddIcon variant='contained'/>
       </IconButton>
+
+
     </Grid>
+
+    <Button 
+      variant='contained' 
+      sx={{ width: "fit-content" }}
+      onClick={ ()=> onAdd( counter ) }
+    >
+          Agregar al carrito
+    </Button>
+
+    <Button variant='contained' sx={{ width: "fit-content" }}>
+      <Link to='/cart'>Comprar ahora</Link>  
+    </Button>
+    </>
   );
 };
