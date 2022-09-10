@@ -2,21 +2,18 @@ import { Grid, ImageListItem, Typography } from "@mui/material"
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { ItemCount } from "../itemCount/ItemCount";
-
 export const ItemDetail = ({ product }) => {
 
-  const { addItem, cart, removeItem } = useContext(CartContext)
+  const { addItem, cart } = useContext(CartContext)
 
   const { title, description, price, pictureUrl, stock} = product;
   
-  const onAdd = ( counter )=> {
-    addItem( product, counter )
-  }
+  const onAdd = ( counter ) => addItem( product, counter )
 
-  
   return (
     <>
-    { console.log(cart) }
+        { console.log(cart)  } {/* para prueba */} 
+
         <Grid item>
           <ImageListItem>
             <img src={ pictureUrl } alt={`imagen de ${ title }`}/>
@@ -34,8 +31,6 @@ export const ItemDetail = ({ product }) => {
 
           <ItemCount stock={ stock } min={1} onAdd={ onAdd }/>
 
-
-          <button onClick={()=> removeItem(product.id)}>eliminar</button>
         </Grid>
     </>
   )
