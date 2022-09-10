@@ -1,6 +1,6 @@
 
-export const isInCart = (cart, product)=> {
+export const isInCart = (cart, id)=> {
 
-    return cart.find( itemCart => itemCart.id === product.id )
+    return cart.find( itemCart => itemCart.id === id )
 
 }

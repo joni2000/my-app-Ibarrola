@@ -1,32 +1,20 @@
 import { useState } from "react"
-import { isInCart } from "../helpers/cart/isInCart";
+import { addToCart } from "../helpers/cart/addToCart";
+import { removeFromCart } from "../helpers/cart/removeFromCart";
 import { CartContext } from "./CartContext"
 
 export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
 
-    const clear = ()=> {
-      setCart([])
-    }
+    const clearCart = ()=> setCart([]);
+ 
+    const addItem = ( product, counter ) => addToCart(cart, setCart, product, counter); 
 
-    const addItem = ( product, counter )=> {
-
-      const inCart = isInCart(cart, product)
-
-    
-        setCart(
-          [ ...cart, product ]
-        )
-    }
-
-    const context = {
-      addItem,
-      cart
-    }
+    const removeItem= (id)=> removeFromCart(cart, setCart, id)
 
   return (
-    <CartContext.Provider value={ context }>
+    <CartContext.Provider value={ {addItem, cart, removeItem, clearCart} }>
         { children }
     </CartContext.Provider>
   )

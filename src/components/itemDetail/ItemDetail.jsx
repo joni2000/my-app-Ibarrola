@@ -5,16 +5,14 @@ import { ItemCount } from "../itemCount/ItemCount";
 
 export const ItemDetail = ({ product }) => {
 
-  const { addItem, cart } = useContext(CartContext)
+  const { addItem, cart, removeItem } = useContext(CartContext)
 
   const { title, description, price, pictureUrl, stock} = product;
   
   const onAdd = ( counter )=> {
-
     addItem( product, counter )
-
   }
-  
+
   
   return (
     <>
@@ -36,6 +34,8 @@ export const ItemDetail = ({ product }) => {
 
           <ItemCount stock={ stock } min={1} onAdd={ onAdd }/>
 
+
+          <button onClick={()=> removeItem(product.id)}>eliminar</button>
         </Grid>
     </>
   )
