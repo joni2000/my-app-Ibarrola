@@ -28,7 +28,7 @@ export const ItemListConteiner = ({ greeting }) => {
       alignItems='center'
     >
       
-      <ItemList products={ productsFiltered }/>
+      <ItemList products={ categoryID ? productsFiltered : products }/>
     </Grid>
   );
 };
