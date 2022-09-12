@@ -2,15 +2,15 @@
     "data": [
         {
             "id": 1,
-            "category": "category1"
+            "name": "category1"
         },
         {
             "id": 2,
-            "category": "category2"
+            "name": "category2"
         },
         {
             "id": 3,
-            "category": "category3"
+            "name": "category3"
         }
     ]
 }
