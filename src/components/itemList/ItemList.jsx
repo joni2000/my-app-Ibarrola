@@ -1,16 +1,7 @@
 import { Grid } from "@mui/material"
-import { useEffect, useState } from "react";
 import { Item } from "../item/Item";
 
-export const ItemList = () => {
-
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        fetch('/data/products.json')
-            .then(res => res.json())
-            .then( products =>  setProducts( products.data ))
-    }, []);
+export const ItemList = ({ products }) => {
 
     return (
         <Grid 

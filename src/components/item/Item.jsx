@@ -11,7 +11,7 @@ export const Item = ({ product }) => {
   return (
     <Card 
       sx={{ maxWidth: 250, cursor: 'pointer' }}
-      onClick={ ()=> navigate(`/productDetail/${id}`)}
+      onClick={ ()=> navigate(`/item/${id}`)}
     >
         <CardHeader
           title={ title }
