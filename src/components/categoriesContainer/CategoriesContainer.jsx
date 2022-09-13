@@ -5,7 +5,7 @@ import { CategoriesList } from "../categoriesList/CategoriesList";
 
 export const CategoriesContainer = () => {  
     
-    const [openMenu, setOpenMenu] = useState(true);
+    const [openMenu, setOpenMenu] = useState(false);
 
     const [categories, setCategories] = useState([]);
       
@@ -29,7 +29,6 @@ export const CategoriesContainer = () => {
             {openMenu && ( <CategoriesList categories={ categories }/> )}
 
         </Grid>
-        { console.log( openMenu ) }
     </>
   )
 }

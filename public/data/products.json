@@ -29,8 +29,8 @@
         },
         {
             "id": 4,
-            "title": "producto2",
-            "description": "descripcion del producto 2",
+            "title": "producto4",
+            "description": "descripcion del producto 4",
             "price": "100",
             "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_917086-MLA48196821690_112021-O.webp",
             "stock": 10,
@@ -38,8 +38,8 @@
         },
         {
             "id": 5,
-            "title": "producto4",
-            "description": "descripcion del producto 4",
+            "title": "producto5",
+            "description": "descripcion del producto 5",
             "price": 100,
             "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_917086-MLA48196821690_112021-O.webp",
             "stock": 10,
