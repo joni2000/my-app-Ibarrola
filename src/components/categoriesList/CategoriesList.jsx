@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 export const CategoriesList = ({ categories }) => {
 
-    console.log(categories)
-
   return (
     <Box
       sx={{
