@@ -10,7 +10,7 @@ export const Home = () => {
       alignItems='center'
     >
 
-        <ItemListConteiner greeting='Hola mundo de react'/>
+        <ItemListConteiner />
     </Grid>
   )
 }

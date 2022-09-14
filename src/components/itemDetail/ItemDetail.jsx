@@ -2,10 +2,10 @@ import { Button, Grid, ImageListItem, Typography } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../context/cart/CartContext";
 import { ItemCount } from "../itemCount/ItemCount";
 export const ItemDetail = ({ product }) => {
-  const { addItem, cart } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
   const [productInCart, setProductInCart] = useState(false);
 
