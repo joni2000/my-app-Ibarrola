@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { addToCart } from "../helpers/cart/addToCart";
-import { removeFromCart } from "../helpers/cart/removeFromCart";
+import { addToCart } from "../../helpers/cart/addToCart";
+import { removeFromCart } from "../../helpers/cart/removeFromCart";
 import { CartContext } from "./CartContext"
 
 export const CartProvider = ({ children }) => {

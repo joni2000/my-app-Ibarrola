@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardMedia, IconButton, Typography } from "@mui/material"
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useNavigate } from "react-router-dom";
+import { toThousand } from "../../helpers/cart/toThousand";
 
 export const Item = ({ product }) => {
 
@@ -24,7 +25,7 @@ export const Item = ({ product }) => {
         <CardMedia
           component="img"
           height="110"
-          image={`${pictureUrl}`}
+          image={pictureUrl}
           alt={`imagen de ${ title }`}
         />
         <CardContent>
@@ -34,7 +35,7 @@ export const Item = ({ product }) => {
         </CardContent>
   
         <Typography variant="subtitle1" color="price.main" component="span" sx={{ m:2 }}>
-          ${price}
+        {`$${ toThousand(price) }`}
         </Typography>
 
     </Card>

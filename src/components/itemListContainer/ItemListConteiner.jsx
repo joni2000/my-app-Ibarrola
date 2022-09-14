@@ -1,20 +1,15 @@
 import { Grid } from "@mui/material";
+import { useContext } from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ProductContext } from "../../context/products/ProductContext";
 import { ItemList } from "../itemList/ItemList";
 
-export const ItemListConteiner = ({ greeting }) => {
+export const ItemListConteiner = () => {
 
-  
-  const [products, setProducts] = useState([]);
-  
-  const { id: categoryID } = useParams()
-  
-  useEffect(() => {
-    fetch('/data/products.json')
-    .then(res => res.json())
-    .then( products =>  setProducts( products.data ))
-  }, []);
+  const  {products}  = useContext( ProductContext );
+
+  const { id: categoryID } = useParams();
   
   const productsFiltered = products?.filter( product => {
     return product.category === +categoryID
@@ -27,7 +22,6 @@ export const ItemListConteiner = ({ greeting }) => {
       justifyContent='center'
       alignItems='center'
     >
-      
       <ItemList products={ categoryID ? productsFiltered : products }/>
     </Grid>
   );
