@@ -3,13 +3,14 @@ import { useState } from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
+import { toThousand } from "../../helpers/cart/toThousand";
 import { ItemCount } from "../itemCount/ItemCount";
 export const ItemDetail = ({ product }) => {
   const { addItem } = useContext(CartContext);
 
   const [productInCart, setProductInCart] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onAdd = (counter) => {
     addItem(product, counter);
@@ -31,7 +32,7 @@ export const ItemDetail = ({ product }) => {
         <Typography variant="h4">{title}</Typography>
         <Typography variant="p">{description}</Typography>
         <Typography variant="p" color="price.main">
-          {price}
+          ${ toThousand( price ) }
         </Typography>
 
         { !productInCart && ( <ItemCount stock={stock} min={1} onAdd={onAdd} /> ) }

@@ -14,6 +14,6 @@ export const addToCart = (cart, setCart, product, counter)=> {
       setCart( newCart )
 
     }else {
-      setCart([...cart, { id: product.id, quantity: counter }])
+      setCart([...cart, { ...product, quantity: counter }])
     }
   }

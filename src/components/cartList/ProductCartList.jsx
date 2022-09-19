@@ -1,27 +1,50 @@
-import { useContext } from "react"
+import { Button, Grid, Typography, typographyClasses } from "@mui/material";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
-import { ProductContext } from "../../context/products/ProductContext";
 import { ItemCart } from "../itemCart/ItemCart";
+import { ShoppingCartCheckout } from "@mui/icons-material";
+import { getTotal } from "../../helpers/cart/getTotal";
+import { toThousand } from "../../helpers/cart/toThousand";
 
 export const ProductCartList = () => {
+  const { cart } = useContext(CartContext);
 
-    const { cart } = useContext(CartContext);
-
-    const { products } = useContext(ProductContext)
-
-    const cartFull = cart.map(cartItem=> (
-
-      products.find(productItem =>  productItem.id === cartItem.id )
-
-    ))
+  const navigate = useNavigate();
 
   return (
-    <>
-        {
-            cartFull.map(product => (
-                <ItemCart product={product} key={product.id}/>
-            ))
-        }
-    </>
-  )
-}
+    <Grid
+      container
+      className="shadow"
+      sx={{ p: 5, gap: 2 }}
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+    >
+      {
+      cart.length > 0 &&
+        cart.map((product) => (
+          <ItemCart product={product} key={product.title} />
+        ))
+      }
+
+      { cart.length > 0 && <Typography color="price.main">Total: ${getTotal(cart)}</Typography>}
+
+      {cart.length === 0 && (
+        <>
+            <Typography>El carrito esta vacío</Typography>
+
+            <ShoppingCartCheckout sx={{ fontSize: 400, color: "primary.main" }} />
+            
+            <Button
+              variant="contained"
+              sx={{ width: "fit-content" }}
+              onClick={() => navigate("/")}
+            >
+              seguir comprando
+            </Button>
+        </>
+      )}
+    </Grid>
+  );
+};

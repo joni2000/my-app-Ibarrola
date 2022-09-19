@@ -3,12 +3,15 @@ import { AppBar, IconButton, Toolbar, Grid, Typography, styled} from "@mui/mater
 import { CartWidget } from "../cartWidget/CartWidget";
 import { SearchBar } from "../searchBar/SearchBar";
 import { Link } from "react-router-dom"
-
-import './navBar.css';
 import { CategoriesContainer } from "../categoriesContainer/CategoriesContainer";
+import { useContext } from "react";
+import './navBar.css';
+import { CartContext } from "../../context/cart/CartContext";
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 export const NavBar = () => {
+
+  const { cart } = useContext(CartContext)
 
   return (
     <>
@@ -32,11 +35,17 @@ export const NavBar = () => {
                 <Typography size='small' fontWeight='bold' sx={{ fontSize: { sm: 25 }, color: '#ffffff'}} >SneakerCity</Typography>
               </Link>
 
-              <CategoriesContainer />
-
               <SearchBar critBusqueda='productos y marcas'/>
 
-              <CartWidget />
+              <CategoriesContainer />
+
+
+              {
+                cart.length > 0 && ( 
+                  <CartWidget cant={cart.length}/> 
+                )
+              }
+              
             </Grid>
 
         </Toolbar>

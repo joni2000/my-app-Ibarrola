@@ -7,6 +7,7 @@ export const Cart = () => {
       container
       direction="column"
       justifyContent="center"
+      alignItems="center"
       sx={{p: 5, gap: 2}}
     >
       <ProductCartList />
