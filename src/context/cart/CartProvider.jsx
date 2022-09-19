@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
  
     const addItem = ( product, counter ) => addToCart(cart, setCart, product, counter); 
 
-    const removeItem= (id)=> removeFromCart(cart, setCart, id)
+    const removeItem= (id)=> removeFromCart(cart, setCart, id);
 
   return (
     <CartContext.Provider value={ {addItem, cart, removeItem, clearCart} }>
