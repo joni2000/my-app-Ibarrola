@@ -7,7 +7,7 @@ export const Item = ({ product }) => {
 
   let navigate = useNavigate();
 
-  const { id, title, description, price, pictureUrl } = product;
+  const { id, title, price, pictureUrl } = product;
 
   return (
     <Card 
@@ -15,7 +15,6 @@ export const Item = ({ product }) => {
       onClick={ ()=> navigate(`/item/${id}`)}
     >
         <CardHeader
-          title={ title }
           action={
             <IconButton aria-label="settings" sx={{ zIndex: 22 }}>
               <FavoriteBorderIcon />
@@ -30,7 +29,7 @@ export const Item = ({ product }) => {
         />
         <CardContent>
           <Typography variant='p'>
-            { description }
+            { title }
           </Typography> 
         </CardContent>
   

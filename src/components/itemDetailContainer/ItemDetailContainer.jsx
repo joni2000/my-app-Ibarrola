@@ -1,16 +1,32 @@
 import { Grid } from "@mui/material"
-import { useContext } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ProductContext } from "../../context/products/ProductContext";
+import { db } from "../../services/firebase/firebase";
 import { ItemDetail } from "../itemDetail/ItemDetail"
+import { ClipLoader } from "react-spinners";
 
 export const ItemDetailContainer = () => {
 
-  const { products } = useContext( ProductContext )
+  const { id } = useParams();
+  const [selectedItem, setSelectedItem] = useState()   
+  const [load, setLoad] = useState(true) 
+  const getSelected = async (idItem) => {
+      try {
+          const document = doc(db, "products", idItem)
+          const response = await getDoc(document)
+          const result = { id: response.id, ...response.data() }
+          setSelectedItem(result)
+          setLoad(false)
+      } catch (error) {
+          console.log(error)
+      }
+  }
 
-  const params = useParams();
-
-  const product = products.find( product => product.id === +params.id )   
+  useEffect(() => {
+      getSelected(id)
+  }, [id])
+ 
 
   return (
     <Grid 
@@ -20,7 +36,10 @@ export const ItemDetailContainer = () => {
       sx={{ m: 3, p: 2, borderRadius: 1, flexWrap: 'noWrap'}}
       className="shadow"
     >
-      { product && <ItemDetail product={ product }/> } 
+      {
+        load ? <ClipLoader color="primary.main" size="100"/> 
+              : <ItemDetail product={ selectedItem }/> 
+       }
     </Grid>
   )
 }
