@@ -1,8 +1,8 @@
 
-export const getTotal = ( cart ) => {
+export const getTotal = ( items ) => {
     let total = 0;
     
-    cart.forEach(({ price, quantity }) => {
+    items.forEach(({ price, quantity }) => {
         total += (price * quantity);
 
     });
