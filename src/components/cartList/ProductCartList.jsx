@@ -1,6 +1,6 @@
 import { Button, Grid, Typography, typographyClasses } from "@mui/material";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
 import { ItemCart } from "../itemCart/ItemCart";
 import { ShoppingCartCheckout } from "@mui/icons-material";
@@ -28,7 +28,16 @@ export const ProductCartList = () => {
         ))
       }
 
-      { cart.length > 0 && <Typography color="price.main">Total: ${getTotal(cart)}</Typography>}
+      { cart.length > 0 && 
+        <>
+        <Typography color="price.main">Total: ${getTotal(cart)}</Typography> 
+          <Button variant="contained">
+            <Link to="/checkout" >
+              Finalizar compra
+            </Link>
+          </Button>
+        </>
+      }
 
       {cart.length === 0 && (
         <>
