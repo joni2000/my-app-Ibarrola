@@ -1,4 +1,3 @@
-import { Typography,} from "@mui/material";
 import { addDoc, collection } from "firebase/firestore";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/cart/CartContext";
@@ -6,7 +5,8 @@ import { getTotal } from "../../helpers/cart/getTotal";
 import { useForm } from "../../hooks/UseForm";
 import { db } from "../../services/firebase/firebase";
 import { FormCheckout } from "../formCheckout/FormCheckout";
-
+import Swal from "sweetalert2"
+import { useNavigate } from "react-router-dom";
 
 export const Checkout = () => {
 
@@ -14,19 +14,30 @@ export const Checkout = () => {
 
   const [orderId, setOrderId] = useState('')
 
-  const { formState: buyer } = useForm( '' ); 
+  const { formState: buyer } = useForm( '' );
+  
+  const navigate = useNavigate()
 
   const generateOrder = async (data) => {
     try {
         const col = collection(db, "Orders")
         const order = await addDoc(col, data)
-        console.log("OrdenNro:", order)
         setOrderId(order.id)
         clearCart()
     } catch (error) {
         console.log(error)
     }
 }
+    const showAlert = ()=> {
+      Swal.fire({
+        title: 'Felicitaciones!',
+        text: `orden de compra: ${orderId}`,
+        icon: 'success',
+        confirmButtonText: 'Ir al inicio'
+      }).then((result) => {
+        result && navigate('/')
+      })
+    }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +52,7 @@ export const Checkout = () => {
 
   console.log(orderId)
 
-  return !orderId ? (<FormCheckout handleSubmit={ handleSubmit } /> )
+  return !orderId ? (<FormCheckout handleSubmit={ handleSubmit } showAlert={ showAlert } />  )
 
-    : <Typography> Tu orden de compra es: { orderId }</Typography>
+    : showAlert()
 };
