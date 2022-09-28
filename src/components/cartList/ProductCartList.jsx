@@ -1,4 +1,4 @@
-import { Button, Grid, Typography, typographyClasses } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
@@ -30,7 +30,7 @@ export const ProductCartList = () => {
 
       { cart.length > 0 && 
         <>
-        <Typography color="price.main">Total: ${getTotal(cart)}</Typography> 
+        <Typography color="price.main">Total: ${toThousand( getTotal(cart) ) }</Typography> 
           <Button variant="contained">
             <Link to="/checkout" >
               Finalizar compra

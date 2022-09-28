@@ -2,14 +2,24 @@ import { Button, Grid, TextField } from "@mui/material"
 import { useForm } from "../../hooks/UseForm";
 import { FormLayout } from "../formLayout/FormLayout"
 
+const reEmail = /\S+@\S+\.\S+/;
+const rePhone = /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/;
+
 const FormData = {
     fullName: "",
     email: "",
     phone: ""
 }
-export const FormCheckout = ({ handleSubmit }) => {
 
-    const { email, fullName, phone, onInputChange } = useForm( FormData ); 
+
+const formValidations = {
+  fullName: [ (fnValue)=> fnValue > 6, 'el nombre debe tener mas de 6 caracteres' ],
+  email: [ (emailValue) => reEmail.test(emailValue) , 'formato invalido'],
+  phone: [ (phoneValue) => rePhone.test(phoneValue) , 'formato invalido'],
+}
+export const FormCheckout = ({ handleSubmit, showAlert  }) => {
+
+    const { email, fullName, phone, onInputChange } = useForm( FormData, formValidations ); 
 
   return (
     <FormLayout title="Datos del cliente">

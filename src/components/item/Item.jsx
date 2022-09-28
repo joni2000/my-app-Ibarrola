@@ -7,23 +7,25 @@ export const Item = ({ product }) => {
 
   let navigate = useNavigate();
 
+  console.log(product)
+
   const { id, title, price, pictureUrl } = product;
 
   return (
     <Card 
-      sx={{ maxWidth: 250, cursor: 'pointer' }}
+      sx={{ width: 300, height: 300,cursor: 'pointer', position: 'relative'}}
       onClick={ ()=> navigate(`/item/${id}`)}
     >
         <CardHeader
           action={
-            <IconButton aria-label="settings" sx={{ zIndex: 22 }}>
+            <IconButton aria-label="settings" sx={{ position: "absolute", top: 2, right: 3}}>
               <FavoriteBorderIcon />
             </IconButton>
           }
         />
         <CardMedia
           component="img"
-          height="110"
+          height="150"
           image={pictureUrl}
           alt={`imagen de ${ title }`}
         />
