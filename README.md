@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Snaekers City
+### **Temática del sitio y público al que va dirigido:**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  
 
-## Available Scripts
+- En **Snaekers City** vas a encontrar una amplia variedad de zapatillas deportivas para adultos o niños, la mayoría importadas y a la moda.
 
-In the project directory, you can run:
+ 
+- Nuestro sitio va dirigido en especial a un público adolescente/adulto con un rango de edad aproximado de entre 13 a 30 años.
 
-### `npm start`
+  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  
 
-### `npm test`
+### **Inspiración de referentes en el mercado:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-  [Dead Stock](https://www.deadstock.com.ar/) -> (El público al que va dirigido es el mismo al que queremos apuntar)
+-   [Drops](https://drops-ba.com/) -> (Diseño y administración de secciones)
 
-### `npm run build`
+-  [Snaeker Shop Ar](https://www.sneakershopar.com/) -> (Funcionalidades a implementar)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-  [Grid](https://www.grid.com.ar/) -> (Imágenes de los productos y descripciones)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Desarrollador
+Hola, mi nombre es **Jonathan Ibarrola**, tengo 22 años y soy desarrollador web full stack orientado al front-end. Sueño con algun dia poder trabajar en el área IT que tanto me gusta y espero que este proyecto pueda hacerme un poco mas eso.
 
-### `npm run eject`
+### Características y funcionalidades de la app
+   **Tecnologías utilizadas**: 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ - JavasCript
+ - React 
+ - Css
+ - Material UI
+ - Firebase  
+ 
+ **Funcionalidades**
+ Esta App tiene un carrito de compras funcionando al 100% donde el cliente podrá acceder al detalle del producto y desde este mismo agregar al carrito el producto deseado. La cantidad de productos que tiene alojados en dicho carrito se verá reflejado en el NavBar para en cualquier momento finalizar la compra. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Guía de uso e instalaciones
+Para levantar la app deberá primero **clonar** el repositorio o **descargar el archivo zip**.  Luego una vez hecho esto deberá realizar las correspondientes instalaciones de dependencias del proyecto, para esto tendrás que abrir la terminal de comandos y ejecutar el siguiente comando:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    npm install 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Si en la consola te arroja que todo ha salido bien, deberás proceder a ejecutar el siguiente comando para levantar el servidor: 
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    npm run start
+   
+Este proceso se tardará unos segundos y automáticamente se te abrirá el navegador con la página levantada y el servidor corriendo en el puerto 3000.   

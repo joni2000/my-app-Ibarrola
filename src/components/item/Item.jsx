@@ -7,8 +7,6 @@ export const Item = ({ product }) => {
 
   let navigate = useNavigate();
 
-  console.log(product)
-
   const { id, title, price, pictureUrl } = product;
 
   return (
