@@ -36,7 +36,7 @@ Hola, mi nombre es **Jonathan Ibarrola**, tengo 22 años y soy desarrollador web
  - Firebase  
  
  **Funcionalidades**: 
- Esta App tiene un carrito de compras funcionando al 100% donde el cliente podrá acceder al detalle del producto y desde este mismo agregar al carrito el producto deseado. La cantidad de productos que tiene alojados en dicho carrito se verá reflejado en el NavBar para en cualquier momento finalizar la compra. 
+ esta App tiene un carrito de compras funcionando al 100% donde el cliente podrá acceder al detalle del producto y desde este mismo agregar al carrito el producto deseado. La cantidad de productos que tiene alojados en dicho carrito se verá reflejado en el NavBar para en cualquier momento finalizar la compra. 
 
 ### Guía de uso e instalaciones
 Para levantar la app deberá primero **clonar** el repositorio o **descargar el archivo zip**.  Luego una vez hecho esto deberá realizar las correspondientes instalaciones de dependencias del proyecto, para esto tendrás que abrir la terminal de comandos y ejecutar el siguiente comando:
