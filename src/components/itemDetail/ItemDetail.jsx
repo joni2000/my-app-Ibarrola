@@ -17,7 +17,6 @@ export const ItemDetail = ({ product }) => {
     setProductInCart(true);
   };
 
-  console.log(productInCart);
   const { title, description, price, pictureUrl, stock } = product;
 
   return (
@@ -35,9 +34,11 @@ export const ItemDetail = ({ product }) => {
           ${ toThousand( price ) }
         </Typography>
 
-        { !productInCart && ( <ItemCount stock={stock} min={1} onAdd={onAdd} /> ) }
+        { !productInCart && ( <ItemCount stock={stock} min={stock === 0 ? 0 : 1} onAdd={onAdd} /> ) }
         
-        { productInCart && ( 
+        { stock === 0 && ( <Typography color="error.main">Agotado</Typography>) }
+
+        { (productInCart && stock > 0 ) && ( 
               <Button
                 variant="contained"
                 sx={{ width: "fit-content" }}
@@ -47,6 +48,7 @@ export const ItemDetail = ({ product }) => {
               </Button>
             )
         }
+
 
       </Grid>
     </>

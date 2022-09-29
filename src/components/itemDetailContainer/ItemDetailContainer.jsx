@@ -37,7 +37,7 @@ export const ItemDetailContainer = () => {
       className="shadow"
     >
       {
-        load ? <ClipLoader color="primary.main" size="100"/> 
+        load ? <ClipLoader color="primary.main" size={100}/> 
               : <ItemDetail product={ selectedItem }/> 
        }
     </Grid>

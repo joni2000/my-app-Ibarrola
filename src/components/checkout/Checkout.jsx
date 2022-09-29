@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/cart/CartContext";
 import { getTotal } from "../../helpers/cart/getTotal";
@@ -18,11 +18,21 @@ export const Checkout = () => {
   
   const navigate = useNavigate()
 
+  const updateStock = (items) => {
+    items.forEach(({ id, stock, quantity }) => {
+      const docRef = doc(db, "products", id);
+      
+      updateDoc(docRef, { stock: stock - quantity })
+        .then(result => console.log( "stock actualizado" ))
+        .catch(error => console.log(error))
+    })
+  }
   const generateOrder = async (data) => {
     try {
         const col = collection(db, "Orders")
         const order = await addDoc(col, data)
         setOrderId(order.id)
+        updateStock(data.items)
         clearCart()
     } catch (error) {
         console.log(error)
@@ -41,7 +51,7 @@ export const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const items = cart.map(({id, price, title, quantity}) => ({ id, price, title, quantity} ))
+    const items = cart.map(({id, price, title, quantity, stock}) => ({ id, price, title, quantity, stock} ))
     const date = new Date()
     const total = getTotal( items );
 
@@ -49,8 +59,6 @@ export const Checkout = () => {
 
     generateOrder(data)
   };
-
-  console.log(orderId)
 
   return !orderId ? (<FormCheckout handleSubmit={ handleSubmit } showAlert={ showAlert } />  )
 

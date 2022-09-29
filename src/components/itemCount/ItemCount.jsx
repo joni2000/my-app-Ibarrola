@@ -40,13 +40,16 @@ export const ItemCount = ({ stock, min, onAdd }) => {
         </IconButton>
       </Grid>
     
-      <Button
+      {stock > 0 && (
+        <Button
         variant="contained"
         sx={{ width: "fit-content" }}
         onClick={() => onAdd(counter)}
       >
         Agregar al carrito
       </Button>
+      )
+      }
     </>
   );
 };
