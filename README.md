@@ -24,7 +24,7 @@
 
 
 ### Desarrollador
-Hola, mi nombre es **Jonathan Ibarrola**, tengo 22 años y soy desarrollador web full stack orientado al front-end. Sueño con algun dia poder trabajar en el área IT que tanto me gusta y espero que este proyecto pueda hacerme un poco mas eso.
+Hola, mi nombre es **Jonathan Ibarrola**, tengo 22 años y soy desarrollador web full stack orientado al front-end. Sueño con algun dia poder trabajar en el área IT que tanto me gusta y espero que este proyecto pueda acercarme un poco mas eso.
 
 ### Características y funcionalidades de la app
    **Tecnologías utilizadas**: 
