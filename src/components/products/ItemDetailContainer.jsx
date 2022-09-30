@@ -3,7 +3,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../services/firebase/firebase";
-import { ItemDetail } from "../itemDetail/ItemDetail"
+import { ItemDetail } from "./"
 import { ClipLoader } from "react-spinners";
 
 export const ItemDetailContainer = () => {

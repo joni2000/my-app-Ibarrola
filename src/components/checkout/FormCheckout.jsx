@@ -1,9 +1,9 @@
-import { Button, Grid, TextField } from "@mui/material"
 import { useForm } from "../../hooks/UseForm";
-import { FormLayout } from "../formLayout/FormLayout"
+import { Button, Grid, TextField } from "@mui/material"
+import { FormLayout } from "./FormLayout"
 
 const reEmail = /\S+@\S+\.\S+/;
-const rePhone = /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/;
+const rePhone = /^(?=(\D*\d){11}$)\(?\d{3,5}\)?[- .]?\d{2,4}[- .]?\d{4}$/
 
 const FormData = {
     fullName: "",
@@ -13,18 +13,19 @@ const FormData = {
 
 
 const formValidations = {
-  fullName: [ (fnValue)=> fnValue > 6, 'el nombre debe tener mas de 6 caracteres' ],
+  fullName: [ (fnValue) => true , 'el nombre debe tener mas de 6 caracteres' ],
   email: [ (emailValue) => reEmail.test(emailValue) , 'formato invalido'],
-  phone: [ (phoneValue) => rePhone.test(phoneValue) , 'formato invalido'],
+  phone: [ (phoneValue) => phoneValue.length > 4 , 'formato invalido'],
 }
-export const FormCheckout = ({ handleSubmit, showAlert  }) => {
+export const FormCheckout = ({ handleSubmit, showAlert, formSubmitted  }) => {
 
-    const { email, fullName, phone, onInputChange } = useForm( FormData, formValidations ); 
+    const { email, fullName, phone, onInputChange, emailValid, phoneValid, fullNameValid, isFormValid } = useForm( FormData, formValidations ); 
 
+    console.log(`email: ${emailValid}, fullName: ${fullNameValid}, phone: ${phoneValid}`)
   return (
     <FormLayout title="Datos del cliente">
-      <form onSubmit={ handleSubmit }>
-        <Grid container>
+      <form onSubmit={ (e)=> handleSubmit( e, isFormValid ) }> 
+        <Grid container> 
           <Grid item xs={12} sx={{ mt: 2 }}>
             <TextField
               label="Nombre completo"
@@ -34,6 +35,8 @@ export const FormCheckout = ({ handleSubmit, showAlert  }) => {
               name="fullName"
               value={ fullName }
               onChange={ onInputChange }
+              error={ !!fullNameValid && formSubmitted }
+              helperText={ formSubmitted && fullNameValid }
             />
           </Grid>
 
@@ -46,6 +49,8 @@ export const FormCheckout = ({ handleSubmit, showAlert  }) => {
               name="email"
               value={ email }
               onChange={ onInputChange }
+              error={ !!emailValid && formSubmitted}
+              helperText={ formSubmitted && emailValid }
             />
           </Grid>
 
@@ -58,6 +63,8 @@ export const FormCheckout = ({ handleSubmit, showAlert  }) => {
               name="phone"
               value={ phone }
               onChange={ onInputChange }
+              error={ !!phoneValid && formSubmitted }
+              helperText={ formSubmitted && phoneValid }
             />
           </Grid>
 

@@ -1,18 +1,20 @@
-import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { useContext, useState } from "react";
-import { CartContext } from "../../context/cart/CartContext";
-import { getTotal } from "../../helpers/cart/getTotal";
-import { useForm } from "../../hooks/UseForm";
-import { db } from "../../services/firebase/firebase";
-import { FormCheckout } from "../formCheckout/FormCheckout";
-import Swal from "sweetalert2"
 import { useNavigate } from "react-router-dom";
+import { useForm } from "../../hooks/UseForm";
+import { CartContext } from "../../context/cart/CartContext";
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { db } from "../../services/firebase/firebase";
+import { getTotal } from "../../helpers/cart/getTotal";
+import Swal from "sweetalert2"
+import { FormCheckout } from "./FormCheckout";
 
 export const Checkout = () => {
 
   const { cart, clearCart } = useContext(CartContext);
 
   const [orderId, setOrderId] = useState('')
+
+  const [formSubmitted, setFormSubmitted] = useState(false); //estado para las validaciones del form 
 
   const { formState: buyer } = useForm( '' );
   
@@ -49,7 +51,7 @@ export const Checkout = () => {
       })
     }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, isFormValid) => {
     e.preventDefault();
     const items = cart.map(({id, price, title, quantity, stock}) => ({ id, price, title, quantity, stock} ))
     const date = new Date()
@@ -57,10 +59,14 @@ export const Checkout = () => {
 
     const data = { buyer, items, date , total}
 
-    generateOrder(data)
+    setFormSubmitted(true)
+
+    if(isFormValid) {
+      generateOrder(data)
+    } 
   };
 
-  return !orderId ? (<FormCheckout handleSubmit={ handleSubmit } showAlert={ showAlert } />  )
+  return !orderId ? (<FormCheckout handleSubmit={ handleSubmit } showAlert={ showAlert } formSubmitted={ formSubmitted } />  )
 
     : showAlert()
 };

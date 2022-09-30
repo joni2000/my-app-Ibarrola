@@ -1,6 +1,7 @@
+import { useNavigate } from "react-router-dom"
 import { IconButton, Typography } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useNavigate } from "react-router-dom"
+
 export const CartWidget = ({ cant }) => {
 
   const navigate = useNavigate()

@@ -1,5 +1,7 @@
 import { Grid } from "@mui/material"
-import { ProductCartList } from "../../components/cartList/ProductCartList"
+import { ProductCartList } from "../components/cart"
+
+
 
 export const Cart = () => {
   return (

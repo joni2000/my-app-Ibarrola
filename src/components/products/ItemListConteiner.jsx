@@ -1,10 +1,10 @@
 import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ItemList } from "../itemList/ItemList";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../services/firebase/firebase';
 import { ClipLoader } from "react-spinners";
+import { ItemList } from "./ItemList";
 
 export const ItemListConteiner = () => {
 

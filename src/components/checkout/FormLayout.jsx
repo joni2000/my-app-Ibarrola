@@ -1,6 +1,5 @@
 import { Grid, Typography } from "@mui/material"
 
-
 export const FormLayout = ({ children,  title = ''}) => {
   return (
     

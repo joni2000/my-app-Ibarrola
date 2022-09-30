@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
 import { toThousand } from "../../helpers/cart/toThousand";
-import { ItemCount } from "../itemCount/ItemCount";
+import { ItemCount } from "../ItemCount";
 export const ItemDetail = ({ product }) => {
   const { addItem } = useContext(CartContext);
 

@@ -1,6 +1,5 @@
 import { Grid } from "@mui/material"
-import { Carousel } from "../../components/carousel/Carousel"
-import { ItemListConteiner } from "../../components/itemListContainer/ItemListConteiner"
+import { ItemListConteiner } from "../components/products/"
 
 export const Home = () => {
   return (
