@@ -1,7 +1,7 @@
+import { useState } from "react";
 import { Button, Grid, IconButton, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useState } from "react";
 export const ItemCount = ({ stock, min, onAdd }) => {
 
   const [counter, setCounter] = useState(min);

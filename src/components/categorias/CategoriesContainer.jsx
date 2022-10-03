@@ -1,7 +1,7 @@
-import { Grid, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
+import { Grid, Typography } from "@mui/material";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { CategoriesList } from "../categoriesList/CategoriesList";
+import { CategoriesList } from "./CategoriesList";
 
 export const CategoriesContainer = () => {  
     

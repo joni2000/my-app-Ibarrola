@@ -1,11 +1,11 @@
-import { Button, Grid, Typography } from "@mui/material";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
-import { ItemCart } from "../itemCart/ItemCart";
+import { Button, Grid, Typography } from "@mui/material";
 import { ShoppingCartCheckout } from "@mui/icons-material";
 import { getTotal } from "../../helpers/cart/getTotal";
 import { toThousand } from "../../helpers/cart/toThousand";
+import { ItemCart } from "./ItemCart";
 
 export const ProductCartList = () => {
   const { cart } = useContext(CartContext);

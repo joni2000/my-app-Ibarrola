@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material"
-import { Item } from "../item/Item";
+import { Item } from "./Item"
 
 export const ItemList = ({ products }) => {
 

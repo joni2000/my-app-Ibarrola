@@ -1,12 +1,12 @@
-import { MenuOutlined } from "@mui/icons-material";
-import { AppBar, IconButton, Toolbar, Grid, Typography, styled} from "@mui/material";
-import { CartWidget } from "../cartWidget/CartWidget";
-import { SearchBar } from "../searchBar/SearchBar";
-import { Link } from "react-router-dom"
-import { CategoriesContainer } from "../categoriesContainer/CategoriesContainer";
 import { useContext } from "react";
-import './navBar.css';
+import { Link } from "react-router-dom"
 import { CartContext } from "../../context/cart/CartContext";
+import { AppBar, IconButton, Toolbar, Grid, Typography, styled} from "@mui/material";
+import { MenuOutlined } from "@mui/icons-material";
+import { CategoriesContainer } from "../categorias/CategoriesContainer";
+import { SearchBar } from "./SearchBar";
+import { CartWidget } from "../cart/CartWidget";
+import './navBar.css';
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 export const NavBar = () => {

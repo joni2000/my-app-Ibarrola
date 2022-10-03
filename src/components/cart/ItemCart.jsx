@@ -1,16 +1,14 @@
-import { Card, CardMedia, Grid, IconButton, Typography } from "@mui/material";
-import { toThousand } from "../../helpers/cart/toThousand";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { useContext } from "react";
 import { CartContext } from "../../context/cart/CartContext";
+import { Card, CardMedia, Grid, IconButton, Typography } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { toThousand } from "../../helpers/cart/toThousand";
 
 export const ItemCart = ({ product }) => {
 
   const { removeItem } = useContext(CartContext);
 
   const { id, title, quantity, price, pictureUrl } = product;
-
-  console.log(product)
 
   return (
     <Card sx={{ width: 1000, maxWidth: 1500, cursor: "pointer" }}>

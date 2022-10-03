@@ -1,5 +1,5 @@
-import { Box, List, ListItem, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { Box, List, ListItem, Typography } from "@mui/material";
 
 export const CategoriesList = ({ categories }) => {
 
