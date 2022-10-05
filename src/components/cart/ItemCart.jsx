@@ -11,19 +11,19 @@ export const ItemCart = ({ product }) => {
   const { id, title, quantity, price, pictureUrl } = product;
 
   return (
-    <Card sx={{ width: 1000, maxWidth: 1500, cursor: "pointer" }}>
       <Grid
         container
-        direction="row"
+        className="shadow animate__animated animate__slideInDown"
         alignItems="center"
         justifyContent="space-between"
+        sx={{ width: "95%", cursor: "pointer", height: 180 }}
       >
         <CardMedia
           component="img"
           height="150"
           image={pictureUrl}
           alt={`imagen de ${title}`}
-          sx={{ width: 150 }}
+          sx={{ width: 300 }}
         />
 
         <Typography variant="h6" componenent="h6">
@@ -50,6 +50,5 @@ export const ItemCart = ({ product }) => {
           <DeleteIcon />
         </IconButton>
       </Grid>
-    </Card>
   );
 };

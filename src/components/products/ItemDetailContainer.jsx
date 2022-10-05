@@ -33,7 +33,7 @@ export const ItemDetailContainer = () => {
       container 
       direction="row"
       justifyContent="center"
-      sx={{ m: 3, p: 2, borderRadius: 1, flexWrap: 'noWrap'}}
+      sx={{ m: 3, p: 2, borderRadius: 1, flexWrap: 'noWrap', width: '98%' }}
       className="shadow"
     >
       {

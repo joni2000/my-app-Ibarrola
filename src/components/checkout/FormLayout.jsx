@@ -8,8 +8,8 @@ export const FormLayout = ({ children,  title = ''}) => {
         spacing={ 0 }
         direction='column'
         alignItems='center'
-        justifyContent='centeer'
-        sx={{ minHeight: '100vh', backgroundColor: 'white', p: 4 , justifyContent: 'center'}}
+        justifyContent='center'
+        sx={{ backgroundColor: 'white', p: 4 , justifyContent: 'center', margin: 0}}
     >
 
         <Grid item

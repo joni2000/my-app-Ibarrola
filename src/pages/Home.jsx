@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material"
-import { ItemListConteiner } from "../components/products/"
+import { DemoCarousel } from "../components/carousel/DemoCarousel"
+import { ItemListContainer } from "../components/products/"
 
 export const Home = () => {
   return (
@@ -8,8 +9,10 @@ export const Home = () => {
       direction='column'
       justifyContent='center'
       alignItems='center'
+      height='auto'
     >
-        <ItemListConteiner />
+        <DemoCarousel />
+        <ItemListContainer />
     </Grid>
   )
 }

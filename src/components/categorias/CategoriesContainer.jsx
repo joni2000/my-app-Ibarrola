@@ -1,34 +1,45 @@
 import { useState, useEffect } from "react";
 import { Grid, Typography } from "@mui/material";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { CategoriesList } from "./CategoriesList";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../services/firebase/firebase";
 
-export const CategoriesContainer = () => {  
-    
-    const [openMenu, setOpenMenu] = useState(false);
+export const CategoriesContainer = () => {
+  const [openMenu, setOpenMenu] = useState(false);
 
-    const [categories, setCategories] = useState([]);
-      
-    useEffect(() => {
-        fetch('/data/categories.json')
-            .then(res => res.json())
-            .then( response =>  setCategories( response.data ))
-    }, []);
+  const [categories, setCategories] = useState();
+  const getData = async () => {
+    try {
+        const docRef = collection(db, "categories")
+        const cat = await getDocs( docRef )
+        const result = cat.docs.map(
+            (doc) => (doc = { id: doc.id, ...doc.data() })
+        );
+        setCategories(result)
+        console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
-    <> 
-        <Grid 
-            container 
-            alignItems="center" 
-            sx={{ width: "fit-content", position: "relative" }}
-            onClick={()=> setOpenMenu( !openMenu )}
-        >
-            <Typography variant="h6" sx={{ fontSize: { sm: 15 }} }></Typography>  Categorias
-            <ArrowDropDownIcon fontSize="medium"/>
-
-            {openMenu && ( <CategoriesList categories={ categories }/> )}
-
-        </Grid>
+    <>
+      <Grid
+        container
+        alignItems="center"
+        sx={{ width: "fit-content", position: "relative", cursor: "pointer" }}
+        onClick={() => setOpenMenu(!openMenu)}
+      >
+        <Typography variant="h4" sx={{ fontSize: 15,  }}>Categorias</Typography>
+          
+        <ExpandMoreIcon fontSize="medium" />
+          {openMenu && <CategoriesList categories={categories} />}
+      </Grid>
     </>
-  )
-}
+  );
+};

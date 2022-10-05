@@ -3,4 +3,4 @@ export * from './ItemDetailContainer';
 export * from './ItemDetail';
 export * from './Item';
 export * from './ItemList';
-export * from './ItemListConteiner';
+export * from './ItemListContainer';
