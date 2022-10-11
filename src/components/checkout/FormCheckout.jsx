@@ -25,8 +25,8 @@ export const FormCheckout = ({ handleSubmit, showAlert, formSubmitted  }) => {
   return (
     <FormLayout title="Datos del cliente">
       <form onSubmit={ (e)=> handleSubmit( e, isFormValid ) }> 
-        <Grid container> 
-          <Grid item xs={12} sx={{ mt: 2 }}>
+        <Grid container sx={{m: 0}}> 
+          <Grid item xs={12} sx={{ mt: 2}}>
             <TextField
               label="Nombre completo"
               type="text"

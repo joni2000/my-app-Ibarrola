@@ -11,6 +11,7 @@ export const Item = ({ product }) => {
 
   return (
     <Card 
+      className="animate__animated animate__zoomIn"
       sx={{ width: 300, height: 300,cursor: 'pointer', position: 'relative'}}
       onClick={ ()=> navigate(`/item/${id}`)}
     >

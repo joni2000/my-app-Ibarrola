@@ -17,7 +17,6 @@ export const ProductCartList = () => {
       container
       className="shadow"
       sx={{ p: 5, gap: 2 }}
-      justifyContent="center"
       alignItems="center"
       direction="column"
     >
@@ -29,14 +28,14 @@ export const ProductCartList = () => {
       }
 
       { cart.length > 0 && 
-        <>
+        <Grid container justifyContent="flex-end" alignItems="center" sx={{ gap: 2, width: "95%" }}>
         <Typography color="price.main">Total: ${toThousand( getTotal(cart) ) }</Typography> 
           <Button variant="contained">
             <Link to="/checkout" >
               Finalizar compra
             </Link>
           </Button>
-        </>
+        </Grid>
       }
 
       {cart.length === 0 && (

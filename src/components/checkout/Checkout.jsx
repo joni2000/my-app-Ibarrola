@@ -68,5 +68,5 @@ export const Checkout = () => {
 
   return !orderId ? (<FormCheckout handleSubmit={ handleSubmit } showAlert={ showAlert } formSubmitted={ formSubmitted } />  )
 
-    : showAlert()
+  /* else */ : showAlert()
 };

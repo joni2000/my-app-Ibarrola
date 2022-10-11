@@ -22,12 +22,12 @@ export const ItemDetail = ({ product }) => {
   return (
     <>
       <Grid item>
-        <ImageListItem>
+        <ImageListItem  sx={{ width: 600 }}>
           <img src={pictureUrl} alt={`imagen de ${title}`} />
         </ImageListItem>
       </Grid>
 
-      <Grid container direction="column" sx={{ gap: 0.5 }}>
+      <Grid container direction="column" sx={{ gap: 2 }}>
         <Typography variant="h4">{title}</Typography>
         <Typography variant="p">{description}</Typography>
         <Typography variant="p" color="price.main">

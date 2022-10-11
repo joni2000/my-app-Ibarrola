@@ -6,11 +6,9 @@ import { db } from '../../services/firebase/firebase';
 import { ClipLoader } from "react-spinners";
 import { ItemList } from "./ItemList";
 
-export const ItemListConteiner = () => {
+export const ItemListContainer = () => {
 
   const { id : categoryId } = useParams();
-
-  console.log(categoryId)
 
   const [products, setProducts] = useState();
   const [load, setLoad] = useState(true);
@@ -20,7 +18,6 @@ export const ItemListConteiner = () => {
       const document = categoria ? query(collection(db, "products"), where("category", "==", +categoria))
         : collection(db, "products")
       const col = await getDocs(document)
-      console.log(col)
       const result = col.docs.map((doc) => doc = { id: doc.id, ...doc.data() })
       setProducts(result)
       setLoad(false)
