@@ -4,7 +4,7 @@ import { useForm } from "../../hooks/UseForm";
 import { CartContext } from "../../context/cart/CartContext";
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../services/firebase/firebase";
-import { getTotal } from "../../helpers/cart/getTotal";
+import { getTotal } from "../../helpers/getTotal";
 import Swal from "sweetalert2"
 import { FormCheckout } from "./FormCheckout";
 

@@ -1,9 +1,9 @@
 import { Button, Grid, ImageListItem, Typography } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
-import { toThousand } from "../../helpers/cart/toThousand";
+import { toThousand } from "../../helpers/toThousand";
 import { ItemCount } from "../ItemCount";
 export const ItemDetail = ({ product }) => {
   const { addItem } = useContext(CartContext);
@@ -22,8 +22,8 @@ export const ItemDetail = ({ product }) => {
   return (
     <>
       <Grid item>
-        <ImageListItem  sx={{ width: 600 }}>
-          <img src={pictureUrl} alt={`imagen de ${title}`} />
+        <ImageListItem className="animate__animated animate__zoomIn" sx={{ width: 600 }}>
+            <img src={pictureUrl} alt={`imagen de ${title}`} />
         </ImageListItem>
       </Grid>
 

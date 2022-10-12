@@ -1,10 +1,9 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
 import { AppBar, IconButton, Toolbar, Grid, Typography, styled} from "@mui/material";
 import { MenuOutlined } from "@mui/icons-material";
 import { CategoriesContainer } from "../categorias/CategoriesContainer";
-import { SearchBar } from "./SearchBar";
 import { CartWidget } from "../cart/CartWidget";
 import './navBar.css';
 
@@ -34,8 +33,6 @@ export const NavBar = () => {
               <Link to='/'>
                 <Typography size='small' fontWeight='bold' sx={{ fontSize: { sm: 25 }, color: '#ffffff'}} >SneakerCity</Typography>
               </Link>
-
-              <SearchBar critBusqueda='productos y marcas'/>
 
               <CategoriesContainer />
 

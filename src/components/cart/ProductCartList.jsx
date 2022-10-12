@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
 import { Button, Grid, Typography } from "@mui/material";
 import { ShoppingCartCheckout } from "@mui/icons-material";
-import { getTotal } from "../../helpers/cart/getTotal";
-import { toThousand } from "../../helpers/cart/toThousand";
+import { getTotal } from "../../helpers/getTotal";
+import { toThousand } from "../../helpers/toThousand";
 import { ItemCart } from "./ItemCart";
 
 export const ProductCartList = () => {

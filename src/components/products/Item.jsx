@@ -1,7 +1,6 @@
-import { Card, CardContent, CardHeader, CardMedia, IconButton, Typography } from "@mui/material"
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { Card, CardContent, CardHeader, CardMedia, Typography } from "@mui/material"
 import { useNavigate } from "react-router-dom";
-import { toThousand } from "../../helpers/cart/toThousand";
+import { toThousand } from "../../helpers/toThousand";
 
 export const Item = ({ product }) => {
 
@@ -15,13 +14,7 @@ export const Item = ({ product }) => {
       sx={{ width: 300, height: 300,cursor: 'pointer', position: 'relative'}}
       onClick={ ()=> navigate(`/item/${id}`)}
     >
-        <CardHeader
-          action={
-            <IconButton aria-label="settings" sx={{ position: "absolute", top: 2, right: 3}}>
-              <FavoriteBorderIcon />
-            </IconButton>
-          }
-        />
+        <CardHeader />
         <CardMedia
           component="img"
           height="150"
