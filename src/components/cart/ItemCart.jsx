@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/cart/CartContext";
-import { Card, CardMedia, Grid, IconButton, Typography } from "@mui/material";
+import { CardMedia, Grid, IconButton, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { toThousand } from "../../helpers/cart/toThousand";
+import { toThousand } from "../../helpers/toThousand";
+import { Link } from "react-router-dom";
 
 export const ItemCart = ({ product }) => {
 
@@ -18,17 +19,21 @@ export const ItemCart = ({ product }) => {
         justifyContent="space-between"
         sx={{ width: "95%", cursor: "pointer", height: 180 }}
       >
-        <CardMedia
-          component="img"
-          height="150"
-          image={pictureUrl}
-          alt={`imagen de ${title}`}
-          sx={{ width: 300 }}
-        />
+        <Link to={`/item/${id}`} >
+          <CardMedia
+            component="img"
+            height="150"
+            image={pictureUrl}
+            alt={`imagen de ${title}`}
+            sx={{ width: 300 }}
+          />
+        </Link>
 
-        <Typography variant="h6" componenent="h6">
-          {title}
-        </Typography>
+        <Link to={`/item/${id}`} >
+          <Typography variant="h6" componenent="h6" color="black.main">
+            {title}
+          </Typography>
+        </Link>
 
         <Typography variant="subtitle1" component="p" sx={{ m: 2 }}>
           Cantidad: {quantity}

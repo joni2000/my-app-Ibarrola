@@ -9,7 +9,7 @@ export const ItemList = ({ products }) => {
             spacing={2}       
             justifyContent='center'
             alignItems='center'
-            sx={{ mt: 1 }}
+            sx={{ my: 1 }}
         >
             {
                 products.map(product => (

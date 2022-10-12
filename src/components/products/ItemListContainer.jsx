@@ -30,7 +30,6 @@ export const ItemListContainer = () => {
     getData(categoryId)
   }, [categoryId])
 
-  console.log(products)
   return (
     <Grid 
     container
@@ -40,7 +39,7 @@ export const ItemListContainer = () => {
     >
     {
       load ? 
-            <ClipLoader color="primary.main" size="100"/> 
+            <ClipLoader color="primary.main" size={ 100 }/> 
     /* else */: <ItemList products={ products }/>
     }
     </Grid> 

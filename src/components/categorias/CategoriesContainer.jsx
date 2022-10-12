@@ -17,7 +17,6 @@ export const CategoriesContainer = () => {
             (doc) => (doc = { id: doc.id, ...doc.data() })
         );
         setCategories(result)
-        console.log(result);
     } catch (error) {
       console.log(error);
     }

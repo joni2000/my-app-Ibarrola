@@ -3,7 +3,6 @@ import { Button, Grid, TextField } from "@mui/material"
 import { FormLayout } from "./FormLayout"
 
 const reEmail = /\S+@\S+\.\S+/;
-const rePhone = /^(?=(\D*\d){11}$)\(?\d{3,5}\)?[- .]?\d{2,4}[- .]?\d{4}$/
 
 const FormData = {
     fullName: "",
@@ -21,7 +20,6 @@ export const FormCheckout = ({ handleSubmit, showAlert, formSubmitted  }) => {
 
     const { email, fullName, phone, onInputChange, emailValid, phoneValid, fullNameValid, isFormValid } = useForm( FormData, formValidations ); 
 
-    console.log(`email: ${emailValid}, fullName: ${fullNameValid}, phone: ${phoneValid}`)
   return (
     <FormLayout title="Datos del cliente">
       <form onSubmit={ (e)=> handleSubmit( e, isFormValid ) }> 
