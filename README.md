@@ -48,3 +48,7 @@ Si en la consola te arroja que todo ha salido bien, deberás proceder a ejecutar
     npm run start
    
 Este proceso se tardará unos segundos y automáticamente se te abrirá el navegador con la página levantada y el servidor corriendo en el puerto 3000.   
+
+### Proceso completo de compra 
+![enter image description here](https://firebasestorage.googleapis.com/v0/b/snaker-city.appspot.com/o/2022-10-12_17-43-40.gif?alt=media&token=f542af6c-d7a5-4c79-be27-f88797010d20)
+
