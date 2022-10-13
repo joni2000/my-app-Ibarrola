@@ -1,7 +1,7 @@
 import { Button, Grid, ImageListItem, Typography } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart/CartContext";
 import { toThousand } from "../../helpers/toThousand";
 import { ItemCount } from "../ItemCount";
@@ -30,9 +30,22 @@ export const ItemDetail = ({ product }) => {
       <Grid container direction="column" sx={{ gap: 2 }}>
         <Typography variant="h4">{title}</Typography>
         <Typography variant="p">{description}</Typography>
-        <Typography variant="p" color="price.main">
+        <Typography variant="p" color="price.main" sx={{fontSize: "18px"}}>
           ${ toThousand( price ) }
         </Typography>
+
+            <Typography 
+              variant="span" 
+              color="white.main"
+              sx={{ 
+                backgroundColor: 'primary.main', 
+                width: 'fit-content', 
+                px: 2,
+                borderRadius: 1
+              }}
+            >
+              Stock: {stock}
+            </Typography>
 
         { !productInCart && ( <ItemCount stock={stock} min={stock === 0 ? 0 : 1} onAdd={onAdd} /> ) }
         

@@ -31,10 +31,10 @@ export const CategoriesContainer = () => {
       <Grid
         container
         alignItems="center"
-        sx={{ width: "fit-content", position: "relative", cursor: "pointer" }}
+        sx={{ width: "fit-content", position: "relative", cursor: "pointer"}}
         onClick={() => setOpenMenu(!openMenu)}
       >
-        <Typography variant="h4" sx={{ fontSize: 15,  }}>Categorias</Typography>
+        <Typography variant="h4" sx={{ fontSize: 16,  }}>Categorias</Typography>
           
         <ExpandMoreIcon fontSize="medium" />
           {openMenu && <CategoriesList categories={categories} />}

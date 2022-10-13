@@ -11,7 +11,7 @@ export const CategoriesList = ({ categories }) => {
         maxWidth: 200,
         bgcolor: "black",
         position: "absolute",
-        top: 22,
+        top: 35,
         left: 4,
         borderRadius: 1,
         opacity: "85%"

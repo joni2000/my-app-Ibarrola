@@ -14,7 +14,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <AppBar position='fixed'>
+      <AppBar position='fixed' >
         <Toolbar sx={{ p: 0 }}>
             <IconButton 
               color='inherit'
@@ -31,18 +31,30 @@ export const NavBar = () => {
               alignItems='center'
             >
               <Link to='/'>
-                <Typography size='small' fontWeight='bold' sx={{ fontSize: { sm: 25 }, color: '#ffffff'}} >SneakerCity</Typography>
+               <Typography 
+                  size='small' 
+                  fontWeight='bold' 
+                  sx={{ 
+                    fontSize: { sm: 25 }, 
+                    color: '#ffffff',
+                  }}   
+                  >
+                    SneakerCity
+                </Typography>
               </Link>
 
-              <CategoriesContainer />
+              <Grid 
+                item
+                sx={{display: 'flex', gap: 3}} 
+              >
+                <CategoriesContainer />
 
-
-              {
-                cart.length > 0 && ( 
-                  <CartWidget cant={cart.length}/> 
-                )
-              }
-              
+                {
+                  cart.length > 0 && ( 
+                    <CartWidget cant={cart.length}/> 
+                  )
+                } 
+              </Grid>
             </Grid>
 
         </Toolbar>
