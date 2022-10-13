@@ -7,7 +7,12 @@ export const CartWidget = ({ cant }) => {
   const navigate = useNavigate()
 
   return (
-    <IconButton color="inherit" size="small" onClick={ ()=> navigate('/cart') }>
+    <IconButton
+      className="animate__animated animate__fadeIn" 
+      color="inherit" 
+      size="small" 
+      onClick={ ()=> navigate('/cart') }
+    >
       <ShoppingCartIcon/>
       <Typography variant="p" sx={{ mb: 2 }}>{ cant }</Typography>
     </IconButton>
