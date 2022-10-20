@@ -6,12 +6,13 @@ import { db } from "../../services/firebase/firebase";
 import { ItemDetail } from "./"
 import { ClipLoader } from "react-spinners";
 
+
 export const ItemDetailContainer = () => {
 
   const { id } = useParams();
-  const [selectedItem, setSelectedItem] = useState()   
+  const [selectedItem, setSelectedItem] = useState();  
   const [load, setLoad] = useState(true) 
-  const getSelected = async (idItem) => {
+  const getSelected = async ( idItem ) => { // trae el producto seleccionado segun el id
       try {
           const document = doc(db, "products", idItem)
           const response = await getDoc(document)
@@ -25,7 +26,7 @@ export const ItemDetailContainer = () => {
 
   useEffect(() => {
       getSelected(id)
-  }, [id])
+  }, [id]) // se ejecuta cada vez que el id cambia
  
 
   return (
@@ -37,9 +38,9 @@ export const ItemDetailContainer = () => {
       className="shadow"
     >
       {
-        load ? <ClipLoader color="primary.main" size={100}/> 
-              : <ItemDetail product={ selectedItem }/> 
-       }
+        load ? <ClipLoader color="primary.main" size={100}/> /* muestra un espiner mientras el fetch esta en proceso */
+              :  <ItemDetail product={ selectedItem }/> 
+      }
     </Grid>
   )
 }

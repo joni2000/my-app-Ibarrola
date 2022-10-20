@@ -8,14 +8,14 @@ import { ItemList } from "./ItemList";
 
 export const ItemListContainer = () => {
 
-  const { id : categoryId } = useParams();
+  const { id : categoryId } = useParams(); // extrae el parametro de la ruta
 
   const [products, setProducts] = useState();
   const [load, setLoad] = useState(true);
   const getData = async (categoria) => {
     try {
       setLoad(true)
-      const document = categoria ? query(collection(db, "products"), where("category", "==", +categoria))
+      const document = categoria ? query(collection(db, "products"), where("category", "==", +categoria)) // si categoria es pasado, retorna los productos de esa categoria sino devuelve todos
         : collection(db, "products")
       const col = await getDocs(document)
       const result = col.docs.map((doc) => doc = { id: doc.id, ...doc.data() })
@@ -28,7 +28,7 @@ export const ItemListContainer = () => {
 
   useEffect(() => {
     getData(categoryId)
-  }, [categoryId])
+  }, [categoryId]) // hace la consulta solo cada vez que la categoryId cambia
 
   return (
     <Grid 
@@ -39,7 +39,7 @@ export const ItemListContainer = () => {
     >
     {
       load ? 
-            <ClipLoader color="primary.main" size={ 100 }/> 
+            <ClipLoader color="primary.main" size={ 100 }/> /* muestra un spiner cuando el fetch esta en proceso */
     /* else */: <ItemList products={ products }/>
     }
     </Grid> 

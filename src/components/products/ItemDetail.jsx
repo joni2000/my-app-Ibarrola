@@ -8,7 +8,7 @@ import { ItemCount } from "../ItemCount";
 export const ItemDetail = ({ product }) => {
   const { addItem } = useContext(CartContext);
 
-  const [productInCart, setProductInCart] = useState(false);
+  const [ productInCart, setProductInCart ] = useState(false);
 
   const navigate = useNavigate();
 
@@ -47,11 +47,11 @@ export const ItemDetail = ({ product }) => {
               Stock: {stock}
             </Typography>
 
-        { !productInCart && ( <ItemCount stock={stock} min={stock === 0 ? 0 : 1} onAdd={onAdd} /> ) }
+        { !productInCart && ( <ItemCount stock={stock} min={stock === 0 ? 0 : 1} onAdd={onAdd} /> ) } {/* si el producto esta en el carrito desaparece el boton de agregar al carrito */}
         
-        { stock === 0 && ( <Typography color="error.main">Agotado</Typography>) }
+        { stock === 0 && ( <Typography color="error.main">Agotado</Typography>) } {/* si el stock es igual a 0, muestra el mensaje de "agotado" */}
 
-        { (productInCart && stock > 0 ) && ( 
+        { (productInCart && stock > 0 ) && ( /* si el producto ya esta en el carrito aparece el boton de ir al carrito */
               <Button
                 variant="contained"
                 sx={{ width: "fit-content" }}
