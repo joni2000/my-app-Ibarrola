@@ -4,19 +4,18 @@ import { FormLayout } from "./FormLayout"
 
 const reEmail = /\S+@\S+\.\S+/;
 
-const FormData = {
+const FormData = { //estado inicial del formulario
     fullName: "",
     email: "",
     phone: ""
 }
 
-
-const formValidations = {
-  fullName: [ (fnValue) => true , 'el nombre debe tener mas de 6 caracteres' ],
+const formValidations = { //funciones para validar el formulario
+  fullName: [ (fullNameValue) => fullNameValue.length > 6 , 'el nombre debe tener mas de 6 caracteres' ],
   email: [ (emailValue) => reEmail.test(emailValue) , 'formato invalido'],
   phone: [ (phoneValue) => phoneValue.length > 4 , 'formato invalido'],
 }
-export const FormCheckout = ({ handleSubmit, showAlert, formSubmitted  }) => {
+export const FormCheckout = ({ handleSubmit, formSubmitted  }) => {
 
     const { email, fullName, phone, onInputChange, emailValid, phoneValid, fullNameValid, isFormValid } = useForm( FormData, formValidations ); 
 
@@ -33,8 +32,8 @@ export const FormCheckout = ({ handleSubmit, showAlert, formSubmitted  }) => {
               name="fullName"
               value={ fullName }
               onChange={ onInputChange }
-              error={ !!fullNameValid && formSubmitted }
-              helperText={ formSubmitted && fullNameValid }
+              error={ !!fullNameValid && formSubmitted } //pinta de color rojo si no pasa las validaciones
+              helperText={ formSubmitted && fullNameValid } //agrega el mesnsaje de error
             />
           </Grid>
 

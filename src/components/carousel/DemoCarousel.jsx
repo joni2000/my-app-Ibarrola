@@ -1,8 +1,8 @@
-import React from "react";
 import { CCarousel, CCarouselItem, CImage } from "@coreui/react";
 import "@coreui/coreui/dist/css/coreui.min.css";
 
 export const DemoCarousel = () => {
+  /* catousel hecho con libreria coreui */
   return (
     <CCarousel controls indicators>
       <CCarouselItem>

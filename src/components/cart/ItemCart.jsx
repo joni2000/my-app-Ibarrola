@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export const ItemCart = ({ product }) => {
 
-  const { removeItem } = useContext(CartContext);
+  const { removeItem } = useContext(CartContext); 
 
   const { id, title, quantity, price, pictureUrl } = product;
 
@@ -50,7 +50,7 @@ export const ItemCart = ({ product }) => {
         .
         <IconButton
           sx={{ alignSelf: "flex-start", color: "red", opacity: "80%" }}
-          onClick={() => removeItem(id) }
+          onClick={() => removeItem(id) } // al hacer clik ejecuta la funcion para eliminar el producto del carrito
         >
           <DeleteIcon />
         </IconButton>

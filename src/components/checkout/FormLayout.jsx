@@ -1,5 +1,6 @@
 import { Grid, Typography } from "@mui/material"
 
+/* estilo del formulario */
 export const FormLayout = ({ children,  title = ''}) => {
   return (
     

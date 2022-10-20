@@ -1,8 +1,6 @@
 import { Grid } from "@mui/material"
 import { ProductCartList } from "../components/cart"
 
-
-
 export const Cart = () => {
   return (
     <Grid

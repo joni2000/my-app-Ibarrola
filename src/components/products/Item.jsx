@@ -12,7 +12,7 @@ export const Item = ({ product }) => {
     <Card 
       className="animate__animated animate__zoomIn"
       sx={{ width: 300, height: 300,cursor: 'pointer', position: 'relative'}}
-      onClick={ ()=> navigate(`/item/${id}`)}
+      onClick={ ()=> navigate(`/item/${id}`)} // navega al detalle del producto
     >
         <CardHeader />
         <CardMedia
@@ -28,7 +28,7 @@ export const Item = ({ product }) => {
         </CardContent>
   
         <Typography variant="subtitle1" color="price.main" component="span" sx={{ m:2 }}>
-        {`$${ toThousand(price) }`}
+          {`$${ toThousand(price) }`} {/* toThousand: le da formato de miles al precio */}
         </Typography>
 
     </Card>

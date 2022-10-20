@@ -8,7 +8,7 @@ import { toThousand } from "../../helpers/toThousand";
 import { ItemCart } from "./ItemCart";
 
 export const ProductCartList = () => {
-  const { cart } = useContext(CartContext);
+  const { cart } = useContext(CartContext); // trae el context del carrito 
 
   const navigate = useNavigate();
 
@@ -21,15 +21,15 @@ export const ProductCartList = () => {
       direction="column"
     >
       {
-      cart.length > 0 &&
+      cart.length > 0 && /* si el carrito tiene algo, muestra los productos */
         cart.map((product) => (
           <ItemCart product={product} key={product.title} />
         ))
       }
-
+ 
       { cart.length > 0 && 
         <Grid container justifyContent="flex-end" alignItems="center" sx={{ gap: 2, width: "95%" }}>
-        <Typography color="price.main">Total: ${toThousand( getTotal(cart) ) }</Typography> 
+        <Typography color="price.main">Total: ${toThousand( getTotal(cart) ) }</Typography> {/* get total obtiene la suma de todos los precios del carrito */}
           <Button variant="contained">
             <Link to="/checkout" >
               Finalizar compra
@@ -38,7 +38,7 @@ export const ProductCartList = () => {
         </Grid>
       }
 
-      {cart.length === 0 && (
+      {cart.length === 0 && ( /* si el carrito no tiene nada invita al usuario a seguir comprando */
         <>
             <Typography>El carrito esta vacío</Typography>
 
